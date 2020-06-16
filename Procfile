@@ -1,1 +1,1 @@
-web: gunicorn coronakit.wsgi --log-file -
+web: gunicorn invoidapi.wsgi --log-file -
