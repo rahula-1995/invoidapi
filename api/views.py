@@ -27,6 +27,11 @@ class FileView(APIView):
     if api_serializer.is_valid():
       api_serializer.save()
 
+      if api_serializer.data["image"] is None:
+        message="please give appropriate filename i.e image"
+        final_error=json.dumps(message)
+        return Response(final_error)
+
       #getting path of image
 
       incomingimagepath=(api_serializer.data["image"])
