@@ -11,7 +11,7 @@ class imageapi(models.Model):
 
 # saving all the response data
 class responseapi(models.Model):
-    base64=models.CharField(max_length=100,default="none")
+    base64=models.TextField(max_length=20000,default="none")
 
     md5=models.CharField(max_length=50,default="none")
 
