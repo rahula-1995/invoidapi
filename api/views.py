@@ -64,6 +64,8 @@ class FileView(APIView):
       #storing aesencryptiondata
       responsedata["AESENCRYPTION"] = aesencryptionoftimestamp
 
+      final_response=json.dumps(responsedata)
+
       # saving response data
 
       newresponse=responseapi(base64=responsedata["base64"],md5=responsedata["md5"],aes=responsedata["AESENCRYPTION"])
@@ -79,7 +81,7 @@ class FileView(APIView):
         final_response_serializer.save()
 
 
-      return Response(final_response_serializer.data, status=status.HTTP_201_CREATED)
+      return Response(final_response, status=status.HTTP_201_CREATED)
     else:
       return Response(api_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
