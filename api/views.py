@@ -68,17 +68,17 @@ class FileView(APIView):
 
       # saving response data
 
-      newresponse=responseapi(base64=responsedata["base64"],md5=responsedata["md5"],aes=responsedata["AESENCRYPTION"])
-      newresponse.save()
+      #newresponse=responseapi(base64=responsedata["base64"],md5=responsedata["md5"],aes=responsedata["AESENCRYPTION"])
+      #newresponse.save()
 
       # finding response data and serving to serialiser
 
-      filtering_final_response=responseapi.objects.filter(id=newresponse.id)
-      final_response_serializer = responseserialiser(data=filtering_final_response, many=True)
+      #filtering_final_response=responseapi.objects.filter(id=newresponse.id)
+      #final_response_serializer = responseserialiser(data=filtering_final_response, many=True)
 
-      if final_response_serializer.is_valid():
+      #if final_response_serializer.is_valid():
 
-        final_response_serializer.save()
+        #final_response_serializer.save()
 
 
       return Response(final_response, status=status.HTTP_201_CREATED)
